@@ -4,18 +4,19 @@ input.onPinPressed(TouchPin.P0, function () {
     basic.showIcon(IconNames.No)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.clearScreen()
     music.playTone(988, music.beat(BeatFraction.Whole))
-    basic.showString("E")
-    basic.pause(500)
     basic.showNumber(Número)
-    basic.pause(500)
-    basic.showString("T")
-    basic.pause(500)
-    basic.showNumber(tempo)
-    basic.pause(500)
+    basic.pause(2000)
 })
 input.onButtonPressed(Button.A, function () {
 	
+})
+input.onButtonPressed(Button.AB, function () {
+    basic.clearScreen()
+    music.playTone(880, music.beat(BeatFraction.Whole))
+    basic.showNumber(tempo)
+    basic.pause(2000)
 })
 input.onButtonPressed(Button.B, function () {
 	
@@ -26,4 +27,5 @@ Número = 0
 tempo = 0
 basic.forever(function () {
     basic.showIcon(IconNames.Heart)
+    tempo += 1
 })
