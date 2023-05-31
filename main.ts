@@ -1,11 +1,13 @@
+let status = 0
 let Número = 0
 let tempo = 0
-let status = 0
 input.onPinPressed(TouchPin.P0, function () {
-    Número += 1
-    music.playTone(131, music.beat(BeatFraction.Whole))
-    basic.showIcon(IconNames.No)
-    basic.pause(100)
+    if (status == 1) {
+        Número += 1
+        music.playTone(131, music.beat(BeatFraction.Whole))
+        basic.showIcon(IconNames.No)
+        basic.pause(100)
+    }
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.clearScreen()
